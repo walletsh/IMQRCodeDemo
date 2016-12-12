@@ -1,1 +1,1 @@
-# IMQRCodeDemo
+# IMQRCodeDemo生成三种二维码：普通二维码、带有彩色的二维码、带有图标的二维码；二维码扫描
