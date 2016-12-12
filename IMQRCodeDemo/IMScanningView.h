@@ -10,4 +10,6 @@
 
 @interface IMScanningView : UIView
 
+-(void)scanLineAnimationAction;
+
 @end

@@ -10,4 +10,5 @@
 
 @interface IMScanningQRCodeViewController : UIViewController
 
+
 @end

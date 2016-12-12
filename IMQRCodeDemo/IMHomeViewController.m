@@ -7,6 +7,8 @@
 //
 
 #import "IMHomeViewController.h"
+#import <AVFoundation/AVFoundation.h>
+#import "IMScanningQRCodeViewController.h"
 
 @interface IMHomeViewController ()
 
@@ -17,6 +19,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)scanQRCodeClick:(UIButton *)sender {
+    
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if (device) {
+        IMScanningQRCodeViewController *scanVC = [[IMScanningQRCodeViewController alloc] init];
+        [self.navigationController pushViewController:scanVC animated:YES];
+    }else{
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"未检测到您的摄像头, 请在真机上测试" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *doneAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alertVC addAction:doneAction];
+        [self presentViewController:alertVC animated:YES completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

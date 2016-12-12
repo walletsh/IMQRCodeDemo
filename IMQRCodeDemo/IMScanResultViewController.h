@@ -10,4 +10,7 @@
 
 @interface IMScanResultViewController : UIViewController
 
+@property (nonatomic, copy) NSString *resultUrl;
+@property (nonatomic, copy) NSString *resultCode;
+
 @end

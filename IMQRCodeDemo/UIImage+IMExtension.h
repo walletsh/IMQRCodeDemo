@@ -10,4 +10,6 @@
 
 @interface UIImage (IMExtension)
 
++ (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat)size;
+
 @end
